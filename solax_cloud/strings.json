@@ -1,0 +1,18 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "data": {
+          "api_token": "[%key:common::config_flow::data::api_token%]",
+          "device_id": "[%key:common::config_flow::data::device%]"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "[%key:common::config_flow::error::cannot_connect%]",
+      "invalid_api_key": "[%key:common::config_flow::error::invalid_api_key%]",
+      "invalid_device": "Invalid Device",
+      "unknown": "[%key:common::config_flow::error::unknown%]"
+    }
+  }
+}
