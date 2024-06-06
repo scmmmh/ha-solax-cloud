@@ -1,4 +1,4 @@
-"""Config flow for SolaX Cloud integration."""
+"""Config flow for the SolaX Cloud integration."""
 
 from __future__ import annotations
 
@@ -31,10 +31,7 @@ STEP_USER_DATA_SCHEMA = vol.Schema(
 
 
 async def validate_input(hass: HomeAssistant, data: dict[str, Any]) -> dict[str, Any]:
-    """Validate the user input allows us to connect.
-
-    Data has the keys from STEP_USER_DATA_SCHEMA with values provided by the user.
-    """
+    """Validate that the API token and serial number are valid."""
 
     api = SolaXCloudAPI()
     try:
@@ -62,7 +59,7 @@ class ConfigFlow(ConfigFlow, domain=DOMAIN):
     async def async_step_user(
         self, user_input: dict[str, Any] | None = None
     ) -> ConfigFlowResult:
-        """Handle the initial step."""
+        """Handle the initial step of the user config flow."""
         errors: dict[str, str] = {}
         if user_input is not None:
             try:
